@@ -4,8 +4,24 @@ export class Negotiation {
         this._quantity = quantity;
         this._value = value;
     }
+    ;
     get date() { return this._date; }
     get quantity() { return this._quantity; }
     get value() { return this._value; }
     get volume() { return this._value * this._quantity; }
 }
+;
+export class NegotiationList {
+    constructor() {
+        this.negotiationList = [];
+    }
+    push(negotiation) {
+        this.negotiationList.push(negotiation);
+    }
+    ;
+    getList() {
+        return this.negotiationList;
+    }
+    ;
+}
+;

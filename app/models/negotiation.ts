@@ -1,16 +1,28 @@
 export class Negotiation {
-   private _date;
-   private _quantity;
-   private _value;
+   private _date: Date
+   private _quantity: number
+   private _value: number
 
-   constructor(date, quantity, value) {
-      this._date = date;
-      this._quantity = quantity;
-      this._value = value;
-   }
+   constructor(date: Date, quantity: number, value: number) {
+      this._date = date
+      this._quantity = quantity
+      this._value = value
+   };
 
-   get date() { return this._date}
-   get quantity() { return this._quantity}
-   get value() { return this._value}
-   get volume() { return this._value * this._quantity}
-}
+   get date():Date { return this._date}
+   get quantity():number { return this._quantity}
+   get value():number { return this._value}
+   get volume():number { return this._value * this._quantity}
+};
+
+export class NegotiationList {
+   private negotiationList: Array<Negotiation> = []
+
+   push(negotiation: Negotiation):void {
+      this.negotiationList.push(negotiation)
+   };
+   
+   getList(): Array<Negotiation> { 
+      return this.negotiationList
+   };
+};

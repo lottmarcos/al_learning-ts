@@ -1,10 +1,10 @@
-import { Negotiation, NegotiationList } from "../models/negotiation.js"
+import { Negotiation, NegotiationArray } from "../models/NegotiationModels.js"
 
 export class NegotiationController {
    private inputDate: HTMLInputElement;
    private inputQuantity: HTMLInputElement;
    private inputValue: HTMLInputElement;
-   private negotiationArray = new NegotiationList();
+   private negotiationArray = new NegotiationArray();
 
    constructor() {
       this.inputDate = document.querySelector('#data')
@@ -26,12 +26,12 @@ export class NegotiationController {
       this.inputDate.focus();
    }
    
-      addNegotiation():void {
-         const negotiation = this.createNegotiation()
-         this.negotiationArray.push(negotiation)
+   addNegotiation():void {
+      const negotiation = this.createNegotiation()
+      this.negotiationArray.push(negotiation)
 
-         console.log(this.negotiationArray)
-         this.clearForm()
-      }
+      console.log(this.negotiationArray)
+      this.clearForm()
+   }
    
 }

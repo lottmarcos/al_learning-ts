@@ -11,16 +11,16 @@ export class Negotiation {
     get volume() { return this._value * this._quantity; }
 }
 ;
-export class NegotiationList {
+export class NegotiationArray {
     constructor() {
-        this.negotiationList = [];
+        this.NegotiationArray = [];
     }
     push(negotiation) {
-        this.negotiationList.push(negotiation);
+        this.NegotiationArray.push(negotiation);
     }
     ;
     getList() {
-        return this.negotiationList;
+        return this.NegotiationArray;
     }
     ;
 }

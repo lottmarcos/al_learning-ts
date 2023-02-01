@@ -15,14 +15,14 @@ export class Negotiation {
    get volume():number { return this._value * this._quantity}
 };
 
-export class NegotiationList {
-   private negotiationList: Array<Negotiation> = []
+export class NegotiationArray {
+   private NegotiationArray: Array<Negotiation> = []
 
    push(negotiation: Negotiation):void {
-      this.negotiationList.push(negotiation)
+      this.NegotiationArray.push(negotiation)
    };
    
-   getList(): Array<Negotiation> { 
-      return this.negotiationList
+   getList(): ReadonlyArray<Negotiation> { 
+      return this.NegotiationArray
    };
 };

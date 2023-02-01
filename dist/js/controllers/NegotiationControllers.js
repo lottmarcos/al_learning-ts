@@ -1,7 +1,7 @@
-import { Negotiation, NegotiationList } from "../models/negotiation.js";
+import { Negotiation, NegotiationArray } from "../models/NegotiationModels.js";
 export class NegotiationController {
     constructor() {
-        this.negotiationArray = new NegotiationList();
+        this.negotiationArray = new NegotiationArray();
         this.inputDate = document.querySelector('#data');
         this.inputQuantity = document.querySelector('#quantidade');
         this.inputValue = document.querySelector('#valor');

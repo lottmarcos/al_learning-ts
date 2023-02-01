@@ -1,8 +1,8 @@
 export class Negotiation {
   constructor(
     private _date: Date,
-    private readonly quantity: number,
-    private readonly value: number
+    public readonly quantity: number,
+    public readonly value: number
   ) {}
 
   get volume(): number {
@@ -15,9 +15,9 @@ export class Negotiation {
 }
 
 export class NegotiationArray {
-  private NegotiationArray: Negotiation[];
+  private NegotiationArray: Negotiation[] = [];
 
-  push(negotiation: Negotiation): void {
+  push(negotiation: Negotiation) {
     this.NegotiationArray.push(negotiation);
   }
 

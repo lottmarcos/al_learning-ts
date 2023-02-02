@@ -1,7 +1,13 @@
-export class NegotiationView {
+export class BaseView {
     constructor(selector) {
         this.element = document.querySelector(selector);
     }
+    update(model) {
+        const template = this.template(model);
+        this.element.innerHTML = template;
+    }
+}
+export class NegotiationView extends BaseView {
     template(model) {
         return `
       <table class="table table-hover table-bordered">
@@ -34,23 +40,11 @@ export class NegotiationView {
       </table> 
     `;
     }
-    update(model) {
-        const template = this.template(model);
-        console.log(template);
-        this.element.innerHTML = template;
-    }
 }
-export class MessageView {
-    constructor(selector) {
-        this.element = document.querySelector(selector);
-    }
+export class MessageView extends BaseView {
     template(model) {
         return `
       <p class="alert alert-info">${model}</p>
   `;
-    }
-    update(model) {
-        const template = this.template(model);
-        this.element.innerHTML = template;
     }
 }

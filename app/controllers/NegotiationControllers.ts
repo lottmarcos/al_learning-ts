@@ -16,14 +16,14 @@ export class NegotiationController {
     this.negotiationView.update(this.negotiationArray);
   }
 
-  createNegotiation(): Negotiation {
+  private createNegotiation(): Negotiation {
     const date = new Date(this.inputDate.value.replace(/-/g, ","));
     const quantity = Number(this.inputQuantity.value);
     const value = Number(this.inputValue.value);
     return new Negotiation(date, quantity, value);
   }
 
-  clearForm(): void {
+  private clearForm(): void {
     this.inputDate.value = "";
     this.inputQuantity.value = "";
     this.inputValue.value = "";

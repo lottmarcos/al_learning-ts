@@ -12,10 +12,10 @@ export abstract class BaseView<Type> {
     this.element.innerHTML = template;
   }
 
-  abstract template(model: Type): string;
+  protected abstract template(model: Type): string;
 }
 export class NegotiationView extends BaseView<NegotiationArray> {
-  template(model: NegotiationArray): string {
+  protected template(model: NegotiationArray): string {
     return `
       <table class="table table-hover table-bordered">
          <thead>
@@ -31,7 +31,8 @@ export class NegotiationView extends BaseView<NegotiationArray> {
               .map((negotiation) => {
                 return `
               <tr>
-              <td>${new Intl.DateTimeFormat().format(negotiation.date)}
+              <td>
+                  ${new Intl.DateTimeFormat().format(negotiation.date)}
               </td>
               <td>
                   ${negotiation.quantity}
@@ -50,7 +51,7 @@ export class NegotiationView extends BaseView<NegotiationArray> {
 }
 
 export class MessageView extends BaseView<string> {
-  template(model: string): string {
+  protected template(model: string): string {
     return `
       <p class="alert alert-info">${model}</p>
   `;

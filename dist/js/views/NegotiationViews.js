@@ -24,7 +24,8 @@ export class NegotiationView extends BaseView {
             .map((negotiation) => {
             return `
               <tr>
-              <td>${new Intl.DateTimeFormat().format(negotiation.date)}
+              <td>
+                  ${new Intl.DateTimeFormat().format(negotiation.date)}
               </td>
               <td>
                   ${negotiation.quantity}

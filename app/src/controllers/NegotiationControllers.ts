@@ -1,3 +1,4 @@
+import { TimeControl } from "../decorators/TimeControl.js";
 import { Negotiation, NegotiationArray } from "../models/NegotiationModels.js";
 import { MessageView, NegotiationView } from "../views/NegotiationViews.js";
 
@@ -30,6 +31,7 @@ export class NegotiationController {
     this.inputDate.focus();
   }
 
+  @TimeControl()
   addNegotiation(): void {
     const negotiation = this.createNegotiation();
     this.negotiationArray.push(negotiation);

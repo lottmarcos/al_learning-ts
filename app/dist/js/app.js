@@ -5,3 +5,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     controller.addNegotiation();
 });
+const importButton = document.querySelector("#import-btn");
+importButton.addEventListener("click", () => {
+    controller.importData();
+});
